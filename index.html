@@ -22,7 +22,7 @@ document.querySelector('#unlock').addEventListener('submit',async e=>{
   let compressed;try{compressed=await crypto.subtle.decrypt({name:'AES-GCM',iv:bytes(m.iv)},key,cipher);}catch{throw Error('That password did not unlock the notebook. Try again.');}
   const html=await new Response(new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'))).text();
   const frame=document.createElement('iframe');frame.title='Wedding Tour Notebook';frame.setAttribute('sandbox','allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-downloads');
-  frame.src=URL.createObjectURL(new Blob([html],{type:'text/html'}));document.body.append(frame);document.querySelector('#gate').remove();cached=null;
+  frame.srcdoc=html;document.body.append(frame);document.querySelector('#gate').remove();cached=null;
  }catch(err){status.textContent=err.message;button.disabled=false;}
 });
 </script></body></html>
