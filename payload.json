@@ -1,0 +1,1 @@
+{"version":1,"kdf":"PBKDF2-SHA256","iterations":600000,"salt":"x/odxAyNrGAMrixWhiKqZg==","iv":"H3gHMpiWp+n3ISQU","chunks":["notebook-0.bin","notebook-1.bin","notebook-2.bin","notebook-3.bin","notebook-4.bin","notebook-5.bin","notebook-6.bin","notebook-7.bin"],"bytes":62726645}
